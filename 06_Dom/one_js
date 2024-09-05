@@ -1,0 +1,75 @@
+// Don
+
+// window object => it is browser's object (not javascript's) and is automatically created by browser
+
+// it is a global object
+
+// console.log(document) => print
+
+// console.dir(document)  => document => prop, method
+
+// DOM (Document Object Model)
+
+
+
+// ************************** Query Selector*******************************
+
+
+let elements = document.querySelector("h1", "#id", ".class") // first element
+
+let secondelements = document.querySelectorAll("h1") // All element
+
+// console.log(elements);
+// console.dir(elements);
+
+
+// ************************** Properties ****************************
+
+
+// get, set, change/update
+
+// parent, child, sibling
+
+
+// *************************************************************************
+
+
+// tagName => returns tag for element nodes
+
+// innerText => returns the text content of the element and all its children
+
+// innerHTML => returns the plain text of HTML contents in the element
+
+// textContent => returns textual content even for hidden elements
+
+
+
+// ***********************************************************************
+
+
+// Question: Create a H2 heading element with text "Hello JavaScript". Append "from Veer JS" to this text using JSON
+
+let h2 = document.querySelector("h2")
+
+// console.log(h2);
+
+h2.innerText = h2.innerText + " from veer singh"
+
+
+// Question Create 3 dives with common class name - "box". Access them and add some unique text to each of them
+
+
+let divs = document.querySelectorAll(".box")
+
+for(div of divs){
+
+    // console.log(div.innerText);
+
+    let idx = 1;
+
+    div.innerText = `now unique value ${idx}`
+
+    idx++;
+}
+
+
