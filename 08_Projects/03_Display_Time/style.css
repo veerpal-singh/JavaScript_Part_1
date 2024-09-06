@@ -1,0 +1,14 @@
+.center{  
+
+    #clock{
+        height: 50px;
+        width: 90px;
+        background-color: yellow;
+        border-radius: 5px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;        
+    } 
+}
+

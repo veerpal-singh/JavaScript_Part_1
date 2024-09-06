@@ -1,0 +1,30 @@
+.flex {
+
+    display: flex;    
+    gap: 24px;
+
+    .button {
+        height: 90px;
+        width: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;        
+    }
+}
+
+#grey {
+    background-color: grey;
+}
+
+#aqua {
+    background-color: aqua;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
