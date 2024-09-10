@@ -10,26 +10,44 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    // setTimeout(() =>{
-    //     console.log("Veer");        
-    // }, 2000)
 
-    const sayVeer = () =>{
-        console.log("veer");        
-    }
+setTimeout(() =>{    // Time mili secnd
+    console.log("veer");
+    
+},2000)
 
-    const changeText = () =>{
-        document.querySelector("h1").innerHTML = "best JS series"
-    }
+const sayName = () =>{
+    console.log("veer singh");    
+}
 
-    const changeMe = setTimeout(changeText, 2000)
+setTimeout(sayName, 2000)
 
-    const btn = document.querySelector("#stop")
 
-    btn.addEventListener("click", () =>{
-        clearTimeout(changeMe)
-        console.log("STOPPED");        
-    })
+const changeText = () =>{  
+    document.querySelector("h1")
+    .innerHTML = "best JS series"
+}
+
+const changeMe = setTimeout(changeText, 2000)
+
+document.querySelector("#stop").
+addEventListener("click", () =>{
+    clearTimeout(changeMe)
+    console.log("STOPPED");
+    
+})
+
+
+
+
+
+
+
+
+
+
+    
+
 
 
 </script>
