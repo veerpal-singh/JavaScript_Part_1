@@ -1,68 +1,106 @@
-// var c = 300
+// // var c = 300
 
-let  a = 300
+// let  a = 300
 
-if(true){
-    let a = 10
-    const b = 20
-    // console.log("INNER", a);    
-}
+// if(true){
+//     let a = 10
+//     const b = 20
+//     // console.log("INNER", a);    
+// }
 
-// console.log(a);
-// console.log(b);
-// console.log(a);
-
-
-// ******************************** Closer *******************************
+// // console.log(a);
+// // console.log(b);
+// // console.log(a);
 
 
-function one(){
-    const username = "veer"
+// // ******************************** Lexical Scoping *******************************
 
-    function two(){
-        const website = "youtube"
-        // console.log(username);        
+
+// function outer(){
+
+//     let username = "Veer"
+//     console.log("OUTER", secret);
+
+//     function inner(){
+
+//         let secret = "my123"
+//         console.log("inner", username);        
+//     }
+
+//     function innerTwo(){
+//         console.log("innerTwo", username);
+//         console.log(secret);        
+//     }
+//     inner()
+//     innerTwo()    
+// }
+// outer()
+
+
+
+// *************************** Closure *****************************
+
+
+// const outerfunc = (a) =>{
+
+//     console.log("Live Viewers " + a);
+
+//     const c = 4
+
+//     return innerFun = (b) =>{
+//         return a+b+c
+//     }    
+// }
+
+// const score = outerfunc(2)
+
+// console.log(score(5));
+
+
+
+const outerfunc = (a,b,c) =>{
+
+    return{
+
+        innerOne : () =>{
+            return a+b;
+        },
+
+        innerTwo : () =>{
+
+            return a+b+c;
+        }
     }
-    // console.log(website);
-
-    two()
-    
 }
 
-// one()
+const scoreFunc = outerfunc(3,4,5)
+
+console.log(scoreFunc.innerOne());
+
+console.log(scoreFunc.innerTwo());
 
 
 
-// *************************** Closer if else *****************************
+
+// // ************************** interesting *********************************
+
+// console.log(addone(5)) // Access
+
+// function addone(num){
+//     return num + 1
+// }
+
+// // addone(5)
 
 
-if(true){
-    const username = "veer"
-    if(username === "veer"){
-        const website = "youtube"
-        // console.log(username + website);        
-    }
-    // console.log(website);    
-}
-// console.log(username);
+// console.log(addTwo(5)); // Can not access (conscept of Hoisting)
+
+// const addTwo = function(num){
+//     return num + 2
+// }
+
+// // addTwo(5)
 
 
 
-// ************************** interesting *********************************
 
-console.log(addone(5)) // Access
-
-function addone(num){
-    return num + 1
-}
-
-// addone(5)
-
-
-console.log(addTwo(5)); // Can not access (conscept of Hoisting)
-
-const addTwo = function(num){
-    return num + 2
-}
-
-// addTwo(5)
