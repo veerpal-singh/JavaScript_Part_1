@@ -1,13 +1,13 @@
 //  *************************** Scop **********************************
 
- var c = 300
+var c = 300
 
 // let  a = 300
 
-if(true){
+if (true) {
     let a = 10
     const b = 20
-    console.log("INNER", a);    
+    console.log("INNER", a);
 }
 
 console.log(a);
@@ -15,7 +15,7 @@ console.log(b);
 console.log(a);
 
 
-// // // ******************************** Lexical Scoping *******************************
+// ******************************** Lexical Scoping *******************************
 
 
 function outer() {
@@ -40,7 +40,7 @@ outer()
 
 
 
-// // *************************** Closure *****************************
+// *************************** Closure *****************************
 
 
 const outerfunc = (a) => {
@@ -49,7 +49,7 @@ const outerfunc = (a) => {
 
     const c = 4
 
-    return innerFun = (b) => {
+    return innerFun = (b) => {  // return to Lexical Scop
         return a + b + c
     }
 }
@@ -62,7 +62,7 @@ console.log(score(5));
 
 const outerfun = (a, b, c) => {
 
-    return {
+    return {    // return to Lexical Scop
 
         innerOne: () => {
             return a + b;
@@ -83,7 +83,7 @@ console.log(scoreFunc.innerTwo());
 
 
 
-// // ***************************** Hoisting ****************************
+// ***************************** Hoisting ****************************
 
 
 console.log(a); // undefined
@@ -99,7 +99,8 @@ const b = "JavaScript"
 
 
 
-// // // ************************** interesting *********************************
+// ************************** interesting *********************************
+
 
 console.log(addone(5)) // Access
 
@@ -118,7 +119,7 @@ const addTwo = function (num) {
 }
 
 
-// // addTwo(5)
+// addTwo(5)
 
 
 
