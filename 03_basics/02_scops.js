@@ -1,79 +1,81 @@
-// // var c = 300
+//  *************************** Scop **********************************
+
+ var c = 300
 
 // let  a = 300
 
-// if(true){
-//     let a = 10
-//     const b = 20
-//     // console.log("INNER", a);    
-// }
+if(true){
+    let a = 10
+    const b = 20
+    console.log("INNER", a);    
+}
 
-// // console.log(a);
-// // console.log(b);
-// // console.log(a);
-
-
-// // ******************************** Lexical Scoping *******************************
+console.log(a);
+console.log(b);
+console.log(a);
 
 
-// function outer(){
-
-//     let username = "Veer"
-//     console.log("OUTER", secret);
-
-//     function inner(){
-
-//         let secret = "my123"
-//         console.log("inner", username);        
-//     }
-
-//     function innerTwo(){
-//         console.log("innerTwo", username);
-//         console.log(secret);        
-//     }
-//     inner()
-//     innerTwo()    
-// }
-// outer()
+// // // ******************************** Lexical Scoping *******************************
 
 
+function outer() {
 
-// *************************** Closure *****************************
+    let a = "Veer"
+    console.log("OUTER", secret);
 
+    function inner() {
 
-// const outerfunc = (a) =>{
+        let secret = "my123"
+        console.log("inner", a);
+    }
 
-//     console.log("Live Viewers " + a);
-
-//     const c = 4
-
-//     return innerFun = (b) =>{
-//         return a+b+c
-//     }    
-// }
-
-// const score = outerfunc(2)
-
-// console.log(score(5));
+    function innerTwo() {
+        console.log("innerTwo", a);
+        console.log(secret);
+    }
+    inner()
+    innerTwo()
+}
+outer()
 
 
 
-const outerfunc = (a,b,c) =>{
+// // *************************** Closure *****************************
 
-    return{
 
-        innerOne : () =>{
-            return a+b;
+const outerfunc = (a) => {
+
+    console.log("Live Viewers " + a);
+
+    const c = 4
+
+    return innerFun = (b) => {
+        return a + b + c
+    }
+}
+
+const score = outerfunc(2)
+
+console.log(score(5));
+
+
+
+const outerfun = (a, b, c) => {
+
+    return {
+
+        innerOne: () => {
+            return a + b;
         },
 
-        innerTwo : () =>{
+        innerTwo: () => {
 
-            return a+b+c;
+            return a + b + c;
         }
     }
 }
 
-const scoreFunc = outerfunc(3,4,5)
+const scoreFunc = outerfun(3, 4, 5)
 
 console.log(scoreFunc.innerOne());
 
@@ -81,23 +83,40 @@ console.log(scoreFunc.innerTwo());
 
 
 
-
-// // ************************** interesting *********************************
-
-// console.log(addone(5)) // Access
-
-// function addone(num){
-//     return num + 1
-// }
-
-// // addone(5)
+// // ***************************** Hoisting ****************************
 
 
-// console.log(addTwo(5)); // Can not access (conscept of Hoisting)
+console.log(a); // undefined
 
-// const addTwo = function(num){
-//     return num + 2
-// }
+var a = "veer"
+
+console.log(b); // Error
+
+
+const b = "JavaScript"
+
+
+
+
+
+// // // ************************** interesting *********************************
+
+console.log(addone(5)) // Access
+
+function addone(num) {
+
+    return num + 1
+}
+
+// addone(5)
+
+
+console.log(addTwo(5)); // Can not access (conscept of Hoisting)
+
+const addTwo = function (num) {
+    return num + 2
+}
+
 
 // // addTwo(5)
 
