@@ -1,4 +1,6 @@
-// Object
+// in Object
+
+// for in loop
 
 const myObject = {
     js: "javascript",
