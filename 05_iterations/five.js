@@ -1,20 +1,26 @@
-const coding = ["js", "HTML", 'CSS', "Python", "React"]
+const coding = ["js", "ruby", "java", "python", "cpp"]
 
 const values = coding.forEach((item) =>{
 
-    // console.log(item);
+    console.log(item);
 
-    return item  // ForEach is not return vlaue  
+    return item   // undefined => forEach is not return value
+    
 })
 
-//console.log(values);
+console.log(values);  // undefined
 
 
-const myNums = [1,2,3,4,5,6]
 
-const newNums = myNums.filter((num) =>{
-    return num > 4    
+ // ****************************** Filter ***************************
+
+
+const myNums = [1,2,3,4,5,6,7,8,9,10]
+
+const newNums = myNums.filter((value) =>{
+
+    return value > 4
 })
-
 console.log(newNums);
+
 
