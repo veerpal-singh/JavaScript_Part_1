@@ -1,3 +1,5 @@
+// forEach loop
+
 // Most use of Array
 
 const coding = ["js", "HTML", 'CSS', "Python", "React"]
