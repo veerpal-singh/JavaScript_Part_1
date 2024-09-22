@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="images">
+        <ul>
+            <li>
+                <img src="images/dice_1.png" alt="dice1" width="100px" id="dice_1">
+            </li>
+            <li>
+                <img src="images/dice_2.png" alt="dice2" width="100px" id="dice_2">
+            </li>
+            <li>
+                <img src="images/dice_3.png" alt="dice3" width="100px" id="dice_3">
+            </li>
+            <li>
+                <img src="images/dice_4.png" alt="dice4" width="100px" id="dice_4">
+            </li>
+
+            <li>
+                <a href="https://google.com" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+
+
+    document.querySelector("#dice_1").addEventListener("click", (e) => {
+
+        // console.log(e);
+
+    })
+
+
+    // ************************* Event Propogation *********************
+
+
+    document.querySelector("#dice_1").addEventListener("click", (e) => {
+
+        // console.log(e);
+
+    }, false)   // default => false => Event bubbling
+
+
+    document.querySelector("#dice_1").addEventListener("click", (e) => {
+
+        // console.log(e);
+
+    }, true)   // true => Event capcturing
+
+
+
+    // ******************************************************************
+
+
+    document.querySelector("#images").addEventListener("click", (e) => {
+
+        // console.log("clicked inside the ul");        
+
+    }, false)
+
+
+    document.querySelector("#dice_1").addEventListener("click", (e) => {
+
+        // console.log("dice 1 clicked");
+
+        e.stopPropagation()
+
+    }, false)  // bubbling => bottom to top
+
+
+    // Note => false => Event bubbling => bottom to top
+
+    // Note2 => true => Event capcturing => top to bottom
+
+
+
+
+    // **************************** Task ***********************************
+
+    // Task => remove the images
+
+
+    document.querySelector("#images").addEventListener("click", (e) =>{
+
+        console.log(e.target.tagName);
+
+        
+
+        if(e.target.tagName === "IMG"){
+
+            console.log(e.target.id);
+
+            let removeIt = e.target.parentNode
+
+            removeIt.remove()
+        }
+
+        
+        
+    })
+
+
+</script>
+
+</html>
