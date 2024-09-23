@@ -15,18 +15,22 @@
 </body>
 <script>
 
-    // setInterval(() =>{    infinity time
-    //     console.log("Veer");        
-    // }, 1000)
+    setInterval(() =>{    // infinity time
+
+        // console.log("Veer"); 
+               
+    }, 1000)
 
 
-    const sayDate = () =>{
-        console.log("veer", Date.now());        
-    }   
+    const intervalId = setInterval(() =>{
 
-    const intervalId = setInterval(sayDate, 1000)
+        console.log("veer");
+        
+    })
 
     clearInterval(intervalId)
+
+    
 
 </script>
 
