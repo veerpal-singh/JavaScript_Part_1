@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Chai aur code</h1>
     <button id="stop">Stop</button>
 </body>
 <script>
 
-setTimeout(() =>{    // Time mili secnd
-    console.log("veer");
-    
-},2000)
+    // ***************************** SetTimeout *************************
 
-const sayName = () =>{
-    console.log("veer singh");    
-}
+    setTimeout(() => {    // Time mili secnd
 
-setTimeout(sayName, 2000)
+        // console.log("veer");
+
+    }, 2000)
+
+    const sayName = () => {
+
+        // console.log("veer singh");    
+    }
+
+    setTimeout(sayName, 2000)
 
 
-const changeText = () =>{  
-    document.querySelector("h1")
-    .innerHTML = "best JS series"
-}
+    // ************************** clearTimeout *******************************
 
-const changeMe = setTimeout(changeText, 2000)
 
-document.querySelector("#stop").
-addEventListener("click", () =>{
-    clearTimeout(changeMe)
-    console.log("STOPPED");
-    
-})
+    const changeMe = setTimeout(() => {
+
+        document.querySelector("h1").innerHTML = "best JS series"
+
+    }, 2000)
+
+
+    document.querySelector("#stop").addEventListener("click", (e) =>{
+
+        clearTimeout(changeMe)
+
+        console.log("STOPPED");
+        
+    })
+
+
 
 </script>
+
 </html>
